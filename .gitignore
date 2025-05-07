@@ -1,0 +1,13 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+
+# SSH keys
+*.pem
+*.key
+*.pub
+
+# VSCode
+.vscode/

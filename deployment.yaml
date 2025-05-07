@@ -1,0 +1,31 @@
+
+# Specifica la versione dell'API Kubernetes da usare
+apiVersion: apps/v1
+
+# Tipo di oggetto che stiamo creando: un Deployment
+kind: Deployment
+
+# Metadati che identificano il Deployment
+metadata:
+  name: hello-docker-deployment  # Nome del deployment
+
+# Specifiche del Deployment
+spec:
+  replicas: 3  # Numero di repliche del pod
+
+  selector:
+    matchLabels:
+      app: hello-docker  # Selettore per associare i pod a questo deployment
+
+  template:
+    metadata:
+      labels:
+        app: hello-docker  # Etichetta del pod per il match con il selector
+
+    spec:
+      containers:
+      - name: hello-docker  # Nome del container
+        image: hello-docker  # Immagine Docker da usare (già presente localmente)
+        imagePullPolicy: Never  # Non fare il pull da registry esterno
+        ports:
+        - containerPort: 3000  # Porta esposta dal container
