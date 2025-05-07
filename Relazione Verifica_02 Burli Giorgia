@@ -25,16 +25,7 @@ Si è creata la cartella Verifica\_02 con i file seguenti:
 
 **Contenuto variables.tf:**
 
-variable "resource\_group\_name" { default = "k3s-rg" }
-
-variable "location" { default = "East US" }
-
-variable "admin\_username" { default = "azureuser" }
-
-variable "ssh\_public\_key\_path" { default = "\~/.ssh/id\_ed25519.pub"
-}
-
-variable "ssh\_private\_key\_path" { default = "\~/.ssh/id\_ed25519" }
+lo si trova nella repository nel file variables.tf
 
 Nota: si è scelto di usare variables.tf e non terraform.tfvars perché i
 valori non variavano tra ambienti.
@@ -89,63 +80,13 @@ sottocartella app/ con:
 
 **app.js**
 
-const express = require('express');
-
-const app = express();
-
-const port = 3000;
-
-app.get('/', (req, res) =&gt; {
-
-res.send('Hello, World!');
-
-});
-
-app.listen(port, () =&gt; {
-
-console.log(\`App listening at http://localhost:\${port}\`);
-
-});
 
 **package.json**
 
-{
-
-"name": "hello-docker",
-
-"version": "1.0.0",
-
-"main": "app.js",
-
-"scripts": {
-
-"start": "node app.js"
-
-},
-
-"dependencies": {
-
-"express": "\^4.17.1"
-
-}
-
-}
 
 **Dockerfile**
 
-FROM node:14
-
-WORKDIR /usr/src/app
-
-COPY package\*.json ./
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD \["npm", "start"\]
+Li troviamo tutti e tre nella stessa repository
 
 **5. Trasferimento file nella VM**
 
@@ -193,73 +134,7 @@ nano \~/deployment.yaml
 
 **Contenuto:**
 
-apiVersion: apps/v1
-
-kind: Deployment
-
-metadata:
-
-name: hello-docker-deployment
-
-spec:
-
-replicas: 3
-
-selector:
-
-matchLabels:
-
-app: hello-docker
-
-template:
-
-metadata:
-
-labels:
-
-app: hello-docker
-
-spec:
-
-containers:
-
-- name: hello-docker
-
-image: hello-docker
-
-imagePullPolicy: IfNotPresent
-
-ports:
-
-- containerPort: 3000
-
----
-
-apiVersion: v1
-
-kind: Service
-
-metadata:
-
-name: hello-docker-service
-
-spec:
-
-type: NodePort
-
-selector:
-
-app: hello-docker
-
-ports:
-
-- protocol: TCP
-
-port: 3000
-
-targetPort: 3000
-
-nodePort: 30080
+Lo troviamo nella repository
 
 **Comando:**
 
