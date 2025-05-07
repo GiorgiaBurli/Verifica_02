@@ -158,7 +158,7 @@ http://172.190.33.118:30080
 Hello, World!
 
 **10. Per automatizzare il provisioning della VM, abbiamo inserito nel
-file main.tf un blocco null\_resource che utilizza i provisioner di
+file main_2.tf un blocco null\_resource che utilizza i provisioner di
 Terraform. Questo ci permette di:**
 
 1.  Copiare automaticamente lo script install\_k3s.sh all'interno della
