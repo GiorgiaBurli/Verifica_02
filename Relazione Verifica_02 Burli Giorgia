@@ -17,11 +17,11 @@ fosse una sola anziché tre, ma che il pod fosse replicato tre volte
 Si è creata la cartella Verifica\_02 con i file seguenti:
 
 -   main.tf: provider, resource group, rete, subnet, NSG, IP pubblico,
-    NIC, macchina virtuale
+    NIC, macchina virtuale-> https://github.com/GiorgiaBurli/Verifica_02/blob/main/main.tf
 
--   variables.tf: contiene variabili riutilizzabili
+-   variables.tf: contiene variabili riutilizzabili-> https://github.com/GiorgiaBurli/Verifica_02/blob/main/variables.tf
 
--   outputs.tf: stampa IP pubblico della VM
+-   outputs.tf: stampa IP pubblico della VM-> https://github.com/GiorgiaBurli/Verifica_02/blob/main/outputs.tf
 
 Nota: si è scelto di usare variables.tf e non terraform.tfvars perché i
 valori non variavano tra ambienti.
@@ -152,7 +152,7 @@ http://publicIP:30080
 Hello, World!
 
 **10. Per automatizzare il provisioning della VM, abbiamo inserito nel
-file main_2.tf un blocco null\_resource che utilizza i provisioner di
+file main_2.tf (https://github.com/GiorgiaBurli/Verifica_02/blob/main/main_2.tf)un blocco null\_resource che utilizza i provisioner di
 Terraform. Questo ci permette di:**
 
 1.  Copiare automaticamente lo script install\_k3s.sh all'interno della
