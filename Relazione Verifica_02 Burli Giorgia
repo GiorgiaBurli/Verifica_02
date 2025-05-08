@@ -254,3 +254,120 @@ Tutti i problemi incontrati sono stati risolti durante il lavoro. Ogni
 fase è documentata con i comandi PowerShell e Linux effettivamente
 utilizzati. Il provisioning automatico tramite provisioner completa un
 flusso di lavoro cloud-native ripetibile e scalabile.
+
+**Pubblicazione del progetto su GitHub**
+
+Per pubblicare i file del progetto creato localmente con Visual Studio
+Code su GitHub, sono stati seguiti i seguenti passaggi:
+
+**1. Creazione della repository GitHub**
+
+-   Accedere a GitHub e creare una nuova repository pubblica chiamata
+    Verifica\_02, **senza** inizializzarla con README o .gitignore (per
+    evitare conflitti).
+
+**2. Inizializzazione del progetto Git in locale**
+
+-   Aprire Visual Studio Code nella cartella del progetto:
+
+cd C:\\Users\\user\\OneDrive\\Desktop\\Verifica\_02
+
+code .
+
+-   Inizializzare il repository Git:
+
+git init
+
+**3. Collegamento con la repository GitHub**
+
+-   Aggiungere la repository remota:
+
+git remote add origin https://github.com/GiorgiaBurli/Verifica\_02.git
+
+**4. Creazione del file .gitignore**
+
+-   Nella cartella principale del progetto (Verifica\_02), creare un
+    nuovo file chiamato **.gitignore**.
+
+
+**5. Aggiunta e commit dei file**
+
+-   Aggiungere tutti i file tracciabili:
+
+git add .
+
+-   Fare il primo commit:
+
+git commit -m "Caricamento iniziale progetto Verifica\_02"
+
+**6. Impostazione del branch principale**
+
+git branch -M main
+
+**7. Primo push su GitHub**
+
+git push -u origin main
+
+Se si verifica un errore di tipo "non-fast-forward" (repo GitHub già
+contiene qualcosa):
+
+1.  Prima fare un pull:
+
+git pull origin main --allow-unrelated-histories
+
+2.  Verrà aperto un editor per confermare il merge:
+
+    -   Premere Esc, poi scrivere :wq e premere Invio per salvare ed
+        uscire.
+
+3.  Infine, ripetere il push:
+
+git push -u origin main
+
+**Caricamento del file screenshots.md e delle immagini su GitHub**
+
+Dopo aver salvato localmente tutti gli screenshot nella cartella
+screenshots/ all’interno della cartella principale Verifica\_02, si è
+proceduto a creare e pubblicare un file .md per documentare visivamente
+i passaggi del progetto.
+
+**Passaggi eseguiti:**
+
+1.  **Creazione del file markdown**
+
+    -   In Visual Studio Code, è stato creato il file screenshots.md.
+
+    -   Al suo interno sono stati aggiunti i riferimenti alle immagini:
+
+
+
+1.  **Caricamento manuale del file screenshots.md**
+
+    -   Apertura della repository GitHub:\
+        [*https://github.com/GiorgiaBurli/Verifica\_02*](https://github.com/GiorgiaBurli/Verifica_02)
+
+    -   Clic su **“Add file”** → **“Upload files”**
+
+    -   Selezione del file screenshots.md dal PC e **Commit** con
+        messaggio:\
+        "Aggiunto file screenshots.md con immagini del progetto"
+
+2.  **Caricamento delle immagini**
+
+    -   Sempre dalla repository GitHub, clic su **“Add file”** →
+        **“Upload files”**
+
+    -   Trascinati tutti i file .png presenti nella cartella
+        screenshots/ locale
+
+    -   Se GitHub richiede di caricarli dentro screenshots/, si accede
+        prima alla cartella e poi si fa **“Upload files”**
+
+    -   Eseguito il commit delle immagini
+
+3.  **Verifica finale**
+
+    -   Apertura del file screenshots.md direttamente su GitHub
+
+    -   Tutte le immagini risultano ora **visibili correttamente**\
+        perché la cartella screenshots/ è presente nel repository online
