@@ -1,4 +1,4 @@
-```
+
 # Specifica la versione dell'API Kubernetes da usare
 apiVersion: apps/v1
 
@@ -29,4 +29,4 @@ spec:
         imagePullPolicy: Never  # Non fare il pull da registry esterno
         ports:
         - containerPort: 3000  # Porta esposta dal container
-        ```
+        
