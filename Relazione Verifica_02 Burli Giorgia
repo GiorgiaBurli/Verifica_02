@@ -287,7 +287,7 @@ git remote add origin https://github.com/GiorgiaBurli/Verifica\_02.git
 **4. Creazione del file .gitignore**
 
 -   Nella cartella principale del progetto (Verifica\_02), creare un
-    nuovo file chiamato **.gitignore**.
+    nuovo file chiamato **.gitignore**.-> https://github.com/GiorgiaBurli/Verifica_02/blob/main/.gitignore
 
 
 **5. Aggiunta e commit dei file**
@@ -337,7 +337,7 @@ i passaggi del progetto.
 
     -   In Visual Studio Code, è stato creato il file screenshots.md.
 
-    -   Al suo interno sono stati aggiunti i riferimenti alle immagini:
+    -   Al suo interno sono stati aggiunti i riferimenti alle immagini:https://github.com/GiorgiaBurli/Verifica_02/blob/main/screenshots.md
 
 
 
