@@ -23,10 +23,6 @@ Si è creata la cartella Verifica\_02 con i file seguenti:
 
 -   outputs.tf: stampa IP pubblico della VM
 
-**Contenuto variables.tf:**
-
-lo si trova nella repository nel file variables.tf
-
 Nota: si è scelto di usare variables.tf e non terraform.tfvars perché i
 valori non variavano tra ambienti.
 
@@ -78,15 +74,13 @@ risposto yes.
 In Visual Studio Code, nella cartella Verifica\_02 si è creata la
 sottocartella app/ con:
 
-**app.js**
+**app.js**: https://github.com/GiorgiaBurli/Verifica_02/blob/main/app/app.js
 
 
-**package.json**
+**package.json**:https://github.com/GiorgiaBurli/Verifica_02/blob/main/app/package.json
 
 
-**Dockerfile**
-
-Li troviamo tutti e tre nella stessa repository
+**Dockerfile**: https://github.com/GiorgiaBurli/Verifica_02/blob/main/app/Dockerfile
 
 **5. Trasferimento file nella VM**
 
@@ -132,14 +126,14 @@ sudo docker images
 
 nano \~/deployment.yaml
 
-**Contenuto:**
+**Contenuto:** https://github.com/GiorgiaBurli/Verifica_02/blob/main/deployment.yaml
 
-Lo troviamo nella repository
+nano \~/service.yaml https://github.com/GiorgiaBurli/Verifica_02/blob/main/service.yaml
 
 **Comando:**
 
 sudo kubectl apply -f \~/deployment.yaml
-
+sudo kubectl apply -f \~/service.yaml
 sudo kubectl get pods
 
 **8. Configurazione NSG**
@@ -151,7 +145,7 @@ regole per porte 22, 3000 e 30080.
 
 **Accesso da browser:**
 
-http://172.190.33.118:30080
+http://publicIP:30080
 
 **Risultato:**
 
@@ -185,7 +179,7 @@ Terraform. Questo ci permette di:**
 
     -   comando kubectl apply per il deploy
 
-Dopo aver aggiornato main.tf e verificato le chiavi SSH, è bastato
+Dopo aver aggiornato main_2.tf e verificato le chiavi SSH, è bastato
 eseguire:
 
 terraform apply
